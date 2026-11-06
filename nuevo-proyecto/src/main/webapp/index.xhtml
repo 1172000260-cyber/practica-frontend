@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Práctica Frontend</title>
+    <h:outputStylesheet name="css/bootstrap.min.css" />
+    <h:outputStylesheet name="css/all.min.css" />
+    <h:outputStylesheet name="css/estilos.css" />
+</h:head>
+<h:body>
+    <div class="container mt-5">
+        <h1 class="text-primary">
+            <i class="fa-solid fa-house"></i> Mi práctica
+        </h1>
+
+        <button type="button" class="btn btn-success mt-3">
+            <i class="fa-solid fa-check"></i> Botón de Bootstrap
+        </button>
+
+        <h:form styleClass="mt-4">
+            <p:inputText value="#{holaBean.nombre}" placeholder="Tu nombre" />
+            <p:commandButton value="Saludar" icon="pi pi-user"
+                             action="#{holaBean.saludar}" update="msg" />
+            <h:outputText id="msg" value="#{holaBean.mensaje}" styleClass="ms-3 fw-bold" />
+        </h:form>
+    </div>
+
+    <h:outputScript name="js/bootstrap.bundle.min.js" />
+</h:body>
+</html>
